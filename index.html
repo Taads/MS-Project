@@ -7,42 +7,95 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css">
-  <meta name="description" content="Consultoria especializada em gerenciamento de projetos e curso de MS Project. Transforme sua gestão com nossas soluções.">
+  <meta name="description" content="Consultoria especializada em gerenciamento de projetos. Transforme sua gestão com nossas soluções.">
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-  <!-- Cabeçalho -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand" aria-label="Logo">
-        <span class="brand-logo material-icons" aria-hidden="true">assignment</span>
-        <span class="brand-name">Consultoria MS Project</span>
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        Transformação de Negócios e Pessoas que Impulsionam a sua Empresa
       </div>
-      <button class="menu-toggle" aria-label="Abrir menu"><span class="material-icons">menu</span></button>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="sobre.html">Sobre o Curso</a></li>
-          <li><a href="depoimentos.html">Depoimentos</a></li>
-          <li><a href="#insights">Insights</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="header-cta">
-        <a class="btn btn-primary" href="#contato" aria-label="Inscreva-se Agora">Inscreva-se Agora</a>
+    </div>
+    
+    <div class="header-main">
+      <div class="container">
+        <div class="header-inner">
+          <div class="brand">
+            <a href="index.html" aria-label="Página Inicial">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+              <img src="imagens/SiteHomeLogo.png" alt="Logo da Empresa" class="brand-logo-img">
+            </a>
+          </div>
+          
+          <nav class="navbar">
+            <button class="navbar-toggle" aria-label="Abrir menu" aria-expanded="false">
+              <span class="material-icons">menu</span>
+            </button>
+            
+            <ul class="navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="sobre.html">
+                  Empresa
+                  <span class="material-icons dropdown-arrow">expand_more</span>
+                </a>
+              </li>
+              <li>
+                <a href="#servicos">
+                  Soluções
+                  <span class="material-icons dropdown-arrow">expand_more</span>
+                </a>
+              </li>
+              <li><a href="depoimentos.html">Clientes & Cases</a></li>
+              <li>
+                <a href="#blog">
+                  Conteúdos
+                  <span class="material-icons dropdown-arrow">expand_more</span>
+                </a>
+              </li>
+              <li><a href="#insights">Blog</a></li>
+              <li><a href="#contato">Parcerias</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+          
+          <div class="header-actions">
+            <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            </div>
+            
+            
+            
+           
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="conteudo">
-    <!-- Banner Principal -->
     <section id="home" class="hero" role="banner" aria-label="Banner Principal">
-      <div class="hero-overlay"></div>
+      <div class="hero-carousel">
+        <div class="hero-carousel-container">
+          <div class="hero-carousel-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80" alt="Gerenciamento de Projetos">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-carousel-item">
+            <img src="https://images.unsplash.com/photo-1516321310766-66f1ce1c7a62?auto=format&fit=crop&w=1600&q=80" alt="Planejamento com MS Project">
+            <div class="hero-overlay"></div>
+          </div>
+        </div>
+        <button class="hero-carousel-btn prev" aria-label="Imagem anterior"><span class="material-icons">chevron_left</span></button>
+        <button class="hero-carousel-btn next" aria-label="Próxima imagem"><span class="material-icons">chevron_right</span></button>
+      </div>
       <div class="container hero-inner">
         <h1 class="hero-title">Transforme Sua Gestão de Projetos</h1>
-        <p class="hero-subtitle">Soluções em consultoria e treinamento para excelência em gerenciamento, com nosso curso de MS Project em destaque.</p>
+        <p class="hero-subtitle">Soluções em consultoria e treinamento para excelência em gerenciamento.</p>
         <div class="hero-actions">
           <a class="btn btn-secondary" href="#servicos">Conheça Nossos Serviços</a>
           <a class="btn btn-outline" href="sobre.html">Sobre o Curso</a>
@@ -50,15 +103,13 @@
       </div>
     </section>
 
-    <!-- Sobre Nós -->
     <section id="sobre-nos" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Quem Somos</h2>
-        <p>Somos especialistas em gerenciamento de projetos, oferecendo consultoria e treinamentos que capacitam empresas e profissionais. Nosso curso de MS Project é líder no mercado, com metodologia prática e certificação reconhecida.</p>
+        <p>Somos especialistas em gerenciamento de projetos, oferecendo consultoria e treinamentos que capacitam empresas e profissionais.</p>
       </div>
     </section>
 
-    <!-- Nossos Serviços -->
     <section id="servicos" class="section">
       <div class="container">
         <h2 class="section-title">Nossos Serviços</h2>
@@ -82,27 +133,7 @@
       </div>
     </section>
 
-    <!-- Curso em Destaque -->
-    <section id="curso" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Curso de MS Project</h2>
-        <div class="grid course-grid">
-          <article class="card course-card">
-            <div class="card-media">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Curso MS Project">
-            </div>
-            <div class="card-body">
-              <h3>Domine o MS Project</h3>
-              <p>Aprenda a planejar, monitorar e gerenciar projetos com nosso curso online completo, com certificação e suporte especializado.</p>
-              <a class="btn btn-primary" href="sobre.html">Conheça o Curso</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nossos Clientes (Carrossel) -->
-    <section id="clientes" class="section">
+    <section id="clientes" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Nossos Clientes</h2>
         <div class="carousel">
@@ -132,17 +163,16 @@
       </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section id="depoimentos-resumo" class="section section-alt">
+    <section id="depoimentos-resumo" class="section">
       <div class="container">
-        <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
+        <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
         <div class="grid testimonial-grid">
           <figure class="testimonial">
-            <blockquote>"O curso transformou minha gestão de projetos!"</blockquote>
+            <blockquote>"A consultoria transformou nossa gestão de projetos!"</blockquote>
             <figcaption>— João Silva, Gerente de Projetos</figcaption>
           </figure>
           <figure class="testimonial">
-            <blockquote>"O suporte dos instrutores foi excepcional."</blockquote>
+            <blockquote>"O suporte da equipe foi excepcional."</blockquote>
             <figcaption>— Maria Oliveira, Analista</figcaption>
           </figure>
         </div>
@@ -152,8 +182,7 @@
       </div>
     </section>
 
-    <!-- Insights -->
-    <section id="insights" class="section">
+    <section id="insights" class="section section-alt">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Insights sobre Gerenciamento</h2>
@@ -184,16 +213,14 @@
       </div>
     </section>
 
-    <!-- Blog -->
-    <section id="blog" class="section section-alt">
+    <section id="blog" class="section">
       <div class="container">
         <h2 class="section-title">Blog</h2>
         <p>Em breve: artigos, tutoriais e dicas sobre MS Project e gestão de projetos.</p>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="section">
+    <section id="contato" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Contato</h2>
         <div class="grid contact-grid">
@@ -202,7 +229,7 @@
             <p><span class="material-icons" aria-hidden="true">call</span> (11) 1234-5678</p>
             <div class="social">
               <a href="#" aria-label="Facebook"><span class="material-icons" aria-hidden="true">facebook</span></a>
-              <a href="#" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">linkedin</span></a>
+              <a href="#" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">work</span></a>
               <a href="#" aria-label="Instagram"><span class="material-icons" aria-hidden="true">photo_camera</span></a>
             </div>
           </div>
@@ -224,7 +251,7 @@
         </div>
         <div class="newsletter card">
           <h3>Assine a Newsletter</h3>
-          <p>Receba dicas, tutoriais e novidades sobre MS Project no seu e-mail.</p>
+          <p>Receba dicas, tutoriais e novidades sobre gestão de projetos no seu e-mail.</p>
           <form class="newsletter-form" action="#" method="post">
             <label class="sr-only" for="newsletter-email">Seu e-mail</label>
             <input id="newsletter-email" name="email" type="email" placeholder="Seu e-mail" required>
@@ -235,7 +262,6 @@
     </section>
   </main>
 
-  <!-- Rodapé -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -248,7 +274,7 @@
       <div>
         <h4>Navegação</h4>
         <ul class="footer-links">
-          <li><a href="sobre.html">Sobre o Curso</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
           <li><a href="depoimentos.html">Depoimentos</a></li>
           <li><a href="#insights">Insights</a></li>
           <li><a href="#blog">Blog</a></li>
@@ -267,5 +293,4 @@
   </footer>
 
   <script src="script.js"></script>
-</body>
 </html>
