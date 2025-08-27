@@ -80,11 +80,11 @@ img {
 }
 
 .header-top {
-  background-color: #afc1d0;
+  background: linear-gradient(90deg, #004aad, #83db75); /* degrade da faixa do topo */
   padding: 10px 0;
   font-size: 14px;
   text-align: center;
-  color: var(--text);
+  color: #000000; /* deixa o texto branco para aparecer no fundo colorido */
   font-weight: 500;
 }
 
@@ -197,18 +197,30 @@ img {
 
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
 }
 
 .social-icon {
-  color: var(--muted);
-  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(90deg,#004aad, #83db75); /* degrade do social */
+  color: #fff; /* deixa o ícone branco */
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .social-icon:hover {
-  color: var(--primary);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-icon i {
+  font-size: 20px; /* tamanho do ícone dentro da bolinha */
 }
 
 .navbar-toggle {
