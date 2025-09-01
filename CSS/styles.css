@@ -80,12 +80,12 @@ img {
 }
 
 .header-top {
-  background: linear-gradient(90deg, #1203bd, #0f169b, #2e3392); /* degrade da faixa do topo */
+  background: linear-gradient(90deg, #004aad, #83db75);
   padding: 10px 0;
   font-size: 14px;
   text-align: center;
-   font-family: Arial, Helvetica, sans-serif;
-  color: #fdfdfd; /* deixa o texto branco para aparecer no fundo colorido */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fdfdfd;
   font-weight: 500;
 }
 
@@ -117,7 +117,7 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 35px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -141,38 +141,10 @@ img {
   color: var(--primary);
 }
 
-.navbar-nav .dropdown-arrow {
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.navbar-nav li:hover .dropdown-arrow {
-  transform: rotate(180deg);
-}
-
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-
-.header-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-.header-contact .phone-main {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 16px;
-}
-
-.header-contact .phone-alt {
-  color: var(--muted);
-  font-size: 13px;
+  gap: 10px;
 }
 
 .btn-cta {
@@ -208,20 +180,19 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(90deg,#06408d, #49993c); /* degrade do social */
-  color: #fff; /* deixa o ícone branco */
+  background: linear-gradient(90deg, #06408d, #49993c);
+  color: #fff;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .social-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon i {
-  font-size: 20px; /* tamanho do ícone dentro da bolinha */
+  font-size: 20px;
 }
 
 .navbar-toggle {
@@ -234,9 +205,6 @@ img {
 }
 
 @media (max-width: 1024px) {
-  .header-contact {
-    display: none;
-  }
   .navbar-nav {
     gap: 25px;
   }
@@ -299,6 +267,7 @@ img {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero-carousel-container {
@@ -309,25 +278,33 @@ img {
 }
 
 .hero-carousel-item {
-  flex: 0 0 100%;
+
+width: 85rem;
+  /*flex: 0 0 100%;
   position: relative;
+  min-height: auto;*/
 }
 
 .hero-carousel-item img {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
+  z-index: 2; /* Coloca a imagem na frente do overlay */
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(7, 15, 35, 0.6), rgba(7, 15, 35, 0.85));
+  z-index: 1; /* Fica atrás da imagem */
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 3; /* Fica na frente de tudo */
   padding: 20px;
 }
 
@@ -361,7 +338,7 @@ img {
   font-size: 24px;
   padding: 12px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4; /* Fica acima da imagem e overlay */
   border-radius: 50%;
   transition: background 0.3s ease;
 }
@@ -444,7 +421,7 @@ img {
 .carousel {
   position: relative;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 0;
 }
 
 .carousel-container {
@@ -453,16 +430,18 @@ img {
 }
 
 .carousel-item {
-  flex: 0 0 33.33%;
-  padding: 10px;
+  flex: 0 0 100%;  /* ocupa 100% da largura (um banner por vez) */
+  padding: 0;
   text-align: center;
 }
 
 .carousel-item img {
-  filter: grayscale(100%);
+  width: 100%;
+  height: auto; /* altura do banner (ajuste como quiser) */
+  max-height: 600px;
+  object-fit: contain; /* preenche o espaço sem distorcer */
+  filter: grayscale(0%); /* ou deixe em 100% se quiser preto e branco */
   transition: filter 0.3s ease;
-  max-height: 50px;
-  object-fit: contain;
 }
 
 .carousel-item:hover img {
@@ -496,9 +475,13 @@ img {
   right: 10px;
 }
 
+.carousel-item img {
+    max-height: 300px; /* banner menor no celular */
+  }
+
 @media (max-width: 780px) {
   .carousel-item {
-    flex: 0 0 50%;
+    flex: 0 0 100%; /* continua 100% no mobile */
   }
 }
 

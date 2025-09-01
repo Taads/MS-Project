@@ -1,60 +1,68 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Menu Hamburger
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.main-nav ul');
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+// Controle do carrossel do hero
+const heroCarousel = document.querySelector('.hero-carousel-container');
+const heroPrevBtn = document.querySelector('.hero-carousel-btn.prev');
+const heroNextBtn = document.querySelector('.hero-carousel-btn.next');
+let heroCurrentIndex = 0;
 
-  // Atualizar ano no rodapé
-  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+function updateHeroCarousel() {
+  const offset = -heroCurrentIndex * 100;
+  heroCarousel.style.transform = `translateX(${offset}%)`;
+}
 
-  // Carrossel
-  const carousel = document.querySelector('.carousel-container');
-  if (carousel) {
-    const items = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
-    const totalItems = items.length;
-    const visibleItems = window.innerWidth <= 480 ? 1 : window.innerWidth <= 780 ? 2 : 3;
-
-    const updateCarousel = () => {
-      const offset = -(currentIndex * (100 / visibleItems));
-      carousel.style.transform = `translateX(${offset}%)`;
-    };
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-      updateCarousel();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % totalItems;
-      updateCarousel();
-    });
-
-    // Auto-rolagem a cada 5 segundos
-    let autoSlide = setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalItems;
-      updateCarousel();
-    }, 5000);
-
-    // Pausar auto-rolagem ao passar o mouse
-    carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    carousel.addEventListener('mouseleave', () => {
-      autoSlide = setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-      }, 5000);
-    });
-
-    // Ajustar carrossel ao redimensionar a janela
-    window.addEventListener('resize', () => {
-      const newVisibleItems = window.innerWidth <= 480 ? 1 : window.innerWidth <= 780 ? 2 : 3;
-      if (newVisibleItems !== visibleItems) {
-        updateCarousel();
-      }
-    });
-  }
+heroPrevBtn.addEventListener('click', () => {
+  heroCurrentIndex = (heroCurrentIndex > 0) ? heroCurrentIndex - 1 : 1;
+  updateHeroCarousel();
 });
+
+heroNextBtn.addEventListener('click', () => {
+  heroCurrentIndex = (heroCurrentIndex < 1) ? heroCurrentIndex + 1 : 0;
+  updateHeroCarousel();
+});
+
+setInterval(() => {
+  heroCurrentIndex = (heroCurrentIndex < 1) ? heroCurrentIndex + 1 : 0;
+  updateHeroCarousel();
+}, 5000);
+
+// Controle do carrossel de clientes
+const clientCarousel = document.querySelector('.carousel-container');
+const clientPrevBtn = document.querySelector('.carousel-btn.prev');
+const clientNextBtn = document.querySelector('.carousel-btn.next');
+let clientCurrentIndex = 0;
+const clientItems = document.querySelectorAll('.carousel-item').length;
+const clientItemsPerView = window.innerWidth > 780 ? 3 : window.innerWidth > 480 ? 2 : 1;
+
+function updateClientCarousel() {
+  const maxIndex = clientItems - clientItemsPerView;
+  clientCurrentIndex = Math.max(0, Math.min(clientCurrentIndex, maxIndex));
+  const offset = -clientCurrentIndex * (100 / clientItemsPerView);
+  clientCarousel.style.transform = `translateX(${offset}%)`;
+}
+
+clientPrevBtn.addEventListener('click', () => {
+  clientCurrentIndex--;
+  updateClientCarousel();
+});
+
+clientNextBtn.addEventListener('click', () => {
+  clientCurrentIndex++;
+  updateClientCarousel();
+});
+
+window.addEventListener('resize', () => {
+  updateClientCarousel();
+});
+
+// Menu hamburguer
+const navbarToggle = document.querySelector('.navbar-toggle');
+const navbarMenu = document.querySelector('.navbar-nav');
+
+navbarToggle.addEventListener('click', () => {
+  const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+  navbarToggle.setAttribute('aria-expanded', !isExpanded);
+  navbarMenu.classList.toggle('active');
+});
+
+// Atualizar ano no rodapé
+const anoAtual = document.getElementById('ano-atual');
+anoAtual.textContent = new Date().getFullYear();
