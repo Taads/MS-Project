@@ -22,29 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
   let heroIndex = 0;
 
   function updateHeroCarousel() {
-    if (heroCarousel) {
-      heroCarousel.style.transform = `translateX(-${heroIndex * 100}%)`;
+    if (heroCarousel && heroItems.length > 0) {
+      const offset = -(heroIndex * 100);
+      heroCarousel.style.transform = `translateX(${offset}%)`;
+      console.log(`Hero carousel updated to index ${heroIndex}, offset: ${offset}%`);
+    }
+  }
+
+  function setHeroIndex(newIndex) {
+    if (heroItems.length > 0) {
+      heroIndex = (newIndex + heroItems.length) % heroItems.length;
+      updateHeroCarousel();
     }
   }
 
   if (heroNext) {
     heroNext.addEventListener('click', () => {
-      heroIndex = (heroIndex + 1) % heroItems.length;
-      updateHeroCarousel();
+      setHeroIndex(heroIndex + 1);
     });
   }
 
   if (heroPrev) {
     heroPrev.addEventListener('click', () => {
-      heroIndex = (heroIndex - 1 + heroItems.length) % heroItems.length;
-      updateHeroCarousel();
+      setHeroIndex(heroIndex - 1);
     });
   }
 
   // Auto-advance hero carousel
   setInterval(() => {
-    heroIndex = (heroIndex + 1) % heroItems.length;
-    updateHeroCarousel();
+    setHeroIndex(heroIndex + 1);
   }, 5000);
 
   // Clients carousel
