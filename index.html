@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="CSS/styles.css">
   <meta name="description" content="Consultoria especializada em gerenciamento de projetos. Transforme sua gestão com nossas soluções.">
 </head>
-<body>
+<body id="top">
   <header class="header">
     <div class="header-top">
       <div class="container">
@@ -89,7 +89,15 @@
     <section id="sobre-nos" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Quem Somos</h2>
-        <p>Somos especialistas em gerenciamento de projetos, oferecendo consultoria e treinamentos que capacitam empresas e profissionais.</p>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Somos uma equipe apaixonada por transformar a gestão de projetos, oferecendo consultoria personalizada e treinamentos que capacitam empresas e profissionais a alcançarem resultados excepcionais. Com anos de experiência, nossa missão é simplificar processos complexos, utilizando ferramentas como MS Project e metodologias ágeis para impulsionar o sucesso dos nossos clientes.</p>
+            <p>Nossa abordagem combina expertise técnica com foco em pessoas, garantindo que cada projeto seja executado com eficiência e alinhamento estratégico.</p>
+          </div>
+          <div class="about-image">
+            <img src="imagens/1.jpg" alt="Equipe em ação" class="about-img">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -266,12 +274,13 @@
       </div>
       <div>
         <h4>Contato</h4>
-        <p>Email: contato@consultoriamsproject.com</p>
-        <p>Telefone: (11) 1234-5678</p>
+        <p><span class="material-icons" aria-hidden="true">email</span> contato@consultoriamsproject.com</p>
+        <p><span class="material-icons" aria-hidden="true">call</span> (11) 1234-5678</p>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>© <span id="ano-atual">2025</span> Consultoria MS Project. Todos os direitos reservados.</p>
+      <a class="back-to-top" href="#top" aria-label="Voltar ao topo"><span class="material-icons" aria-hidden="true">arrow_upward</span> Topo</a>
     </div>
   </footer>
 
