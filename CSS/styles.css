@@ -120,6 +120,15 @@ img {
   }
 }
 
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Cabeçalho */
 .header {
   background-color: #fff;
@@ -635,6 +644,122 @@ img {
 
 .card-link:hover {
   text-decoration: underline;
+}
+
+/* Nossos Clientes - Novo Layout */
+.clientes-carousel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  background: linear-gradient(180deg, #ffffff, #f4f7fb);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.clientes-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.5s ease-in-out;
+  animation: scrollInfinite 20s linear infinite;
+}
+
+.clientes-carousel:hover .clientes-track {
+  animation-play-state: paused;
+}
+
+.cliente-logo {
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cliente-logo img {
+  max-width: 160px;
+  max-height: 90px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.cliente-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.cliente-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.12);
+}
+
+.clientes-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5;
+}
+
+.clientes-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.clientes-btn.prev {
+  left: 10px;
+}
+
+.clientes-btn.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .cliente-logo {
+    flex: 0 0 160px;
+    padding: 10px 15px;
+  }
+  .cliente-logo img {
+    max-width: 120px;
+    max-height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clientes-track {
+    gap: 20px;
+  }
+  .cliente-logo {
+    flex: 0 0 140px;
+  }
+  .cliente-logo img {
+    max-width: 100px;
+  }
+  .clientes-btn {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 /* Carrossel de Clientes */
