@@ -436,7 +436,6 @@ img {
   .section {
     page-break-inside: avoid;
   }
-}shadow);
 }
 
 .header-top {
@@ -675,12 +674,14 @@ img {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .hero-carousel-item {
   flex: 0 0 100%;
   position: relative;
+  
 }
 
 .hero-carousel-item img {
@@ -1356,4 +1357,5 @@ img {
   text-align: center;
   background: #fff;
   border-radius: 12px;
-  box-shadow: var(--
+  box-shadow: var(--shadow);
+}
