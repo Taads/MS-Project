@@ -793,6 +793,118 @@ img {
   }
 }
 
+/* ================================
+   TÍTULOS DE SEÇÃO - ESTILIZADOS, CENTRALIZADOS E SEM FUNDO
+   ================================ */
+.section-title {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2.5rem;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+  opacity: 0.8;
+}
+
+.section-title:hover::after {
+  width: 110px;
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ================================
+   HOVER NOS CARDS DE SERVIÇOS - LETRAS PRETAS + FUNDO AZUL DO TÍTULO
+   ================================ */
+#servicos .service-card {
+  background: #fff;
+  color: var(--text);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#servicos .service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#servicos .service-card:hover::before {
+  opacity: 1;
+}
+
+#servicos .service-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Textos viram PRETO no hover */
+#servicos .service-card:hover h3,
+#servicos .service-card:hover p,
+#servicos .service-card:hover .service-card-link,
+#servicos .service-card:hover .service-card-link .material-icons {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* Ícone com fundo branco */
+#servicos .service-card:hover .card-icon {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Elevação suave */
+#servicos .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(28, 92, 220, 0.3);
+}
+
 /* Seções */
 .section-title {
   font-size: 2.2rem;
