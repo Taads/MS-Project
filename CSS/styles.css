@@ -1341,7 +1341,7 @@ img {
 }
 
 /* ===================================
-   SEÇÃO INSIGHTS - RENOVADA COM CARROSSEL
+   SEÇÃO INSIGHTS - CORRIGIDA
    =================================== */
 
 #insights {
@@ -1394,7 +1394,7 @@ img {
   transform: translateX(5px);
 }
 
-/* Grid de Insights com Carrossel */
+/* Grid de Insights */
 .insights-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1418,12 +1418,12 @@ img {
   box-shadow: 0 12px 40px rgba(16, 24, 40, 0.15);
 }
 
-/* Mini Carrossel de Imagens */
+/* Mini Carrossel de Imagens - CORRIGIDO */
 .insight-carousel {
   position: relative;
   width: 100%;
   height: 320px;
-  overflow: hidden;
+  overflow: hidden; /* CRÍTICO: mantém as imagens dentro do container */
   background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
 }
 
@@ -1432,6 +1432,7 @@ img {
   width: 100%;
   height: 100%;
   transition: transform 0.5s ease-in-out;
+  position: relative; /* Garante posicionamento correto */
 }
 
 .insight-carousel-item {
@@ -1439,6 +1440,7 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden; /* ADICIONAL: segunda camada de contenção */
 }
 
 .insight-carousel-item img {
@@ -1447,8 +1449,11 @@ img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
+  display: block; /* Remove espaços extras */
+  transform-origin: center center; /* Zoom a partir do centro */
 }
 
+/* Zoom apenas no hover do CARD, não afeta o layout */
 .insight-card:hover .insight-carousel-item img {
   transform: scale(1.05);
 }
@@ -1480,7 +1485,7 @@ img {
   border-radius: 5px;
 }
 
-/* Botões de Navegação do Mini Carrossel */
+/* Botões de Navegação */
 .insight-carousel-btn {
   position: absolute;
   top: 50%;
@@ -1551,7 +1556,8 @@ img {
   margin: 0;
   flex: 1;
 }
-/* ===== CARD DE INFORMAÇÕES (substitui o primeiro insight com imagem) ===== */
+
+/* Card de Informações (primeiro card) */
 .info-card {
   display: flex;
   align-items: center;
@@ -1562,6 +1568,7 @@ img {
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Garante que nada saia do card */
 }
 
 .info-card:hover {
@@ -1585,6 +1592,168 @@ img {
   line-height: 1.6;
   margin-bottom: 12px;
   color: #f0f8ff;
+}
+
+.info-card-content .card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s, padding 0.3s;
+}
+
+.info-card-content .card-link:hover {
+  color: #1c5cdc;
+  background-color: #fff;
+  border-color: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* Link "Ler artigo" */
+.card-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.card-link::after {
+  content: '→';
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+  gap: 12px;
+  text-decoration: none;
+}
+
+.card-link:hover::after {
+  transform: translateX(5px);
+}
+
+/* Badge de Categoria */
+.insight-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(28, 92, 220, 0.3);
+}
+
+/* Data de Publicação */
+.insight-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.insight-date .material-icons {
+  font-size: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .insights-grid {
+    gap: 30px;
+  }
+
+  .insight-carousel {
+    height: 280px;
+  }
+
+  .insight-card-body {
+    padding: 25px;
+  }
+
+  .insight-card-body h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link-more {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .insight-carousel {
+    height: 250px;
+  }
+
+  .insight-card-body {
+    padding: 20px;
+  }
+
+  .insight-card-body h3 {
+    font-size: 1.2rem;
+  }
+
+  .insight-card-body p {
+    font-size: 1rem;
+  }
+
+  .info-card {
+    padding: 30px 20px;
+  }
+
+  .info-card-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-carousel {
+    height: 220px;
+  }
+
+  .insight-carousel-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .insight-carousel-btn .material-icons {
+    font-size: 20px;
+  }
+
+  .info-card {
+    padding: 25px 15px;
+  }
+
+  .info-card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-card-content p {
+    font-size: 0.95rem;
+  }
 }
 
 .info-card-content .card-link {
