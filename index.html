@@ -308,10 +308,7 @@
       </div>
     </div>
     <div class="insight-card-body">
-      <div class="insight-date">
-        <span class="material-icons">calendar_today</span>
-        <span>10 de Janeiro, 2025</span>
-      </div>
+      
       <h3>Maximize seu Time!</h3>
       <p>Como usar o MS Project para liderar equipes com sucesso. Aprenda técnicas avançadas de gestão e coordenação de times de alto desempenho.</p>
       <a class="card-link" href="#blog">Ler artigo</a>
@@ -330,43 +327,124 @@
       </div>
     </section> -->
 
-    <section id="contato" class="section section-alt">
+    <!-- SEÇÃO DE CONTATO RENOVADA -->
+<section id="contato" class="section section-alt">
   <div class="container">
-    <h2 class="section-title">Contato!</h2>
-    <div class="grid contact-grid">
-      <div class="contact-info">
-        <p><span class="material-icons" aria-hidden="true">email</span> contato@consultoriamsproject.com</p>
-        <p><span class="material-icons" aria-hidden="true">call</span> (11) 1234-5678</p>
-        <div class="social">
-          <a href="#" aria-label="Facebook"><span class="material-icons" aria-hidden="true">facebook</span></a>
-          <a href="#" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">work</span></a>
-          <a href="#" aria-label="Instagram"><span class="material-icons" aria-hidden="true">photo_camera</span></a>
+    <h2 class="section-title">Entre em Contato!</h2>
+    
+    <div class="contact-grid">
+      
+      <!-- Card de Informações Estilizado -->
+      <div class="contact-info-card">
+        <div class="contact-info-header">
+          <h3>Vamos Conversar?</h3>
+          <p>Estamos prontos para ajudar você a transformar a gestão de projetos da sua empresa. Entre em contato conosco!</p>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-info-item">
+          <div class="contact-icon-box">
+            <span class="material-icons">email</span>
+          </div>
+          <div class="contact-info-text">
+            <h4>Email</h4>
+            <p><a href="mailto:contato@consultoriamsproject.com">contato@consultoriamsproject.com</a></p>
+          </div>
+        </div>
+
+        <!-- Telefone -->
+        <div class="contact-info-item">
+          <div class="contact-icon-box">
+            <span class="material-icons">phone</span>
+          </div>
+          <div class="contact-info-text">
+            <h4>Telefone</h4>
+            <p><a href="tel:+551112345678">(11) 1234-5678</a></p>
+          </div>
+        </div>
+
+        <!-- Localização -->
+        <div class="contact-info-item">
+          <div class="contact-icon-box">
+            <span class="material-icons">location_on</span>
+          </div>
+          <div class="contact-info-text">
+            <h4>Localização</h4>
+            <p>São Paulo, SP - Brasil<br>Atendimento em todo o território nacional</p>
+          </div>
+        </div>
+
+        <!-- Horário -->
+        <div class="contact-info-item">
+          <div class="contact-icon-box">
+            <span class="material-icons">schedule</span>
+          </div>
+          <div class="contact-info-text">
+            <h4>Horário de Atendimento</h4>
+            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+          </div>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="contact-social">
+          <h4>Siga-nos nas Redes</h4>
+          <div class="contact-social-icons">
+            <a href="https://www.linkedin.com/in/araujoariel" target="_blank" class="contact-social-btn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="contact-social-btn" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/ariel_araujo83" target="_blank" class="contact-social-btn" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5511123456789" target="_blank" class="contact-social-btn" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- Formulário com Formspree -->
-      <form class="card contact-form" id="contatoForm"
-        action="https://formspree.io/f/xkgplegb" method="POST">
+      <!-- Formulário de Contato -->
+      <form class="card contact-form" action="https://formspree.io/f/xkgplegb" method="POST">
+        <h3>Envie sua Mensagem</h3>
+        <p>Preencha o formulário abaixo e entraremos em contato em breve.</p>
+
         <div class="form-row">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+          <label for="nome">Nome Completo</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required>
         </div>
+
         <div class="form-row">
           <label for="email">E-mail</label>
-          <input id="email" name="_replyto" type="email" placeholder="Seu e-mail" required>
+          <input id="email" name="_replyto" type="email" placeholder="seu@email.com" required>
         </div>
+
+        <div class="form-row">
+          <label for="telefone">Telefone (opcional)</label>
+          <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000">
+        </div>
+
         <div class="form-row">
           <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+          <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar você?" required></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Enviar</button>
+
+        <button class="btn btn-primary" type="submit">
+          Enviar Mensagem
+          <span class="material-icons" style="font-size: 18px; margin-left: 5px;">send</span>
+        </button>
+
         <p class="form-success" id="mensagemSucesso" style="display:none;">
           ✅ Mensagem enviada com sucesso! Em breve entraremos em contato.
         </p>
       </form>
     </div>
+  </div>
+</section>
 
-    <div class="newsletter card">
+
+    <!-- <div class="newsletter card">
       <h3>Assine a Newsletter</h3>
       <p>Receba dicas, tutoriais e novidades sobre gestão de projetos no seu e-mail.</p>
       <form class="newsletter-form" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
@@ -377,39 +455,84 @@
           🎉 Inscrição realizada com sucesso!
         </p>
       </form>
-    </div>
+    </div> -->
   </div>
 </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Links Rápidos</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Mapa do site</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-        </ul>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Logo e Descrição -->
+        <div class="footer-brand-section">
+          <div class="footer-logo-wrapper">
+            <img src="imagens/LogoHome (100x100).jpg" alt="Logo" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Transformação de Negócios e Pessoas que Impulsionam a sua Empresa</p>
+          <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/araujoariel" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="footer-social-link" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/ariel_araujo83" target="_blank" class="footer-social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5511123456789" target="_blank" class="footer-social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links de Navegação -->
+        <div class="footer-nav-section">
+          <h4 class="footer-section-title">Navegação</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Empresa</a></li>
+            <li><a href="#servicos">Soluções</a></li>
+            <li><a href="depoimentos.html">Clientes & Cases</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Informações de Contato -->
+        <div class="footer-contact-section">
+          <h4 class="footer-section-title">Contato</h4>
+          <div class="footer-contact-item">
+            <span class="material-icons footer-contact-icon">email</span>
+            <a href="mailto:contato@consultoriamsproject.com">contato@consultoriamsproject.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-icons footer-contact-icon">phone</span>
+            <a href="tel:+551112345678">(11) 1234-5678</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-icons footer-contact-icon">location_on</span>
+            <span>São Paulo, SP - Brasil</span>
+          </div>
+        </div>
+
+        <!-- Links Legais -->
+        <div class="footer-legal-section">
+          <h4 class="footer-section-title">Informações</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Mapa do Site</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Navegação</h4>
-        <ul class="footer-links">
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="depoimentos.html">Depoimentos</a></li>
-          <li><a href="#insights">Insights</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <p>© <span id="ano-atual">2025</span> Consultoria MS Project. Todos os direitos reservados.</p>
+        <a class="back-to-top" href="#top" aria-label="Voltar ao topo">
+          <span class="material-icons">arrow_upward</span>
+          <span>Topo</span>
+        </a>
       </div>
-      <div>
-        <h4>Contato</h4>
-        <p><span class="material-icons" aria-hidden="true">email</span> contato@consultoriamsproject.com</p>
-        <p><span class="material-icons" aria-hidden="true">call</span> (11) 1234-5678</p>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="ano-atual">2025</span> Consultoria MS Project. Todos os direitos reservados.</p>
-      <a class="back-to-top" href="#top" aria-label="Voltar ao topo"><span class="material-icons" aria-hidden="true">arrow_upward</span> Topo</a>
     </div>
   </footer>
 
