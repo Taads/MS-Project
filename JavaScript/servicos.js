@@ -191,3 +191,4 @@ function initTypingEffect() {
 // Descomente a linha abaixo se quiser ativar o efeito de typing
 // initTypingEffect();
 
+
