@@ -1,0 +1,402 @@
+/* ===========================
+   Página: curso-msproject.html
+   Estilos específicos da área do curso
+   (header, footer e cores globais vêm de styles.css)
+   =========================== */
+
+.curso-main {
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+/* ===========================
+   Hero com vídeo
+   =========================== */
+
+.curso-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.curso-hero-texto h1 {
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.curso-hero-subtitulo {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.curso-hero-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.curso-hero-lista li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.curso-hero-lista li .material-icons {
+  color: var(--primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.curso-botao-comprar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.curso-botao-comprar .material-icons {
+  font-size: 1.2rem;
+}
+
+.curso-botao-comprar.destaque {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(28, 92, 220, 0.3);
+}
+
+.curso-botao-comprar.destaque:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(28, 92, 220, 0.4);
+}
+
+.curso-botao-comprar.secundario {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: #fff;
+}
+
+.curso-botao-comprar.secundario:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 92, 220, 0.25);
+}
+
+.curso-botao-comprar.secundario:hover .material-icons {
+  transform: translateX(4px);
+}
+
+.curso-garantia {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.curso-hero-video {
+  position: relative;
+}
+
+.curso-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso-hero-video:hover .curso-video-wrapper {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.curso-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.curso-video-legenda {
+  margin-top: 0.6rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ===========================
+   Seção informações
+   =========================== */
+
+.curso-info {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.curso-info-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.curso-info-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.curso-info-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.curso-info-card h2::before {
+  content: '';
+  width: 4px;
+  height: 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.curso-info-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.curso-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.curso-info-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.curso-info-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.curso-info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.curso-info-item:hover::before {
+  transform: scaleY(1);
+}
+
+.curso-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(28, 92, 220, 0.1), rgba(135, 206, 250, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.curso-info-item:hover .curso-info-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: scale(1.1) rotate(5deg);
+}
+
+.curso-info-icon .material-icons {
+  color: var(--primary);
+  font-size: 1.75rem;
+  transition: color 0.3s ease;
+}
+
+.curso-info-item:hover .curso-info-icon .material-icons {
+  color: #fff;
+}
+
+.curso-info-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.curso-info-item p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===========================
+   Conteúdo programático
+   =========================== */
+
+.curso-conteudo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.curso-conteudo-bloco {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.curso-conteudo-bloco:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.curso-conteudo-bloco h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.curso-conteudo-bloco h2::before {
+  content: '';
+  width: 4px;
+  height: 1.75rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.curso-conteudo-bloco ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.75rem 0;
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.curso-conteudo-bloco ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.curso-conteudo-bloco ul li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+/* ===========================
+   Responsividade
+   =========================== */
+
+@media (max-width: 960px) {
+  .curso-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .curso-hero-video {
+    order: -1;
+  }
+
+  .curso-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .curso-conteudo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .curso-header-content {
+    padding-inline: 1rem;
+  }
+
+  .curso-nav {
+    display: none; /* se já houver menu mobile no site, ele deve aparecer por JS */
+  }
+
+  .curso-main {
+    padding-inline: 1rem;
+  }
+
+  .curso-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .curso-info-card,
+  .curso-conteudo-bloco {
+    padding: 1.3rem 1.1rem 1.4rem;
+  }
+}
